@@ -70,7 +70,7 @@ After combining both datasets:
 *RandomForestClassifier (GridSearchCV tuned)<br>
 *XGBoost Classifier (RandomizedSearchCV tuned)<br>
 *Multilayer Perceptron Classifier(MLP Classifier)<br>
-The best Model with good metrics will be chosen for final training 
+The best Model with good metrics will be chosen for final training. 
 6)Model Evaluation and confusion matrix after every model training
 
 ## Random Forest Classifier 
@@ -86,6 +86,15 @@ To classify the extracted emotion features, I have trained a Random Forest Class
 Accuracy	69.4% <br>
 Weighted F1	70% <br>
 Macro F1	68% <br>
+**F1 Score Based Analysis (Emotion-Wise)**
 
+Calm	0.84	🔹 Best-performing emotion. High precision & recall. Likely due to clear, consistent acoustic patterns.
+Angry	0.76	🔹 Strong performance. Model identifies it confidently—probably due to its intense, sharp vocal tone.
+Sad	0.67	🔸 Moderately high. Slight confusion with similar low-energy emotions like fearful.
+Fearful	0.65	🔸 Mid-level score. Often confused with sad or angry, reflecting overlap in vocal tone features.
+Happy	0.68	🔸 Moderate. Good precision but slightly low recall — model misses some happy samples.
+Neutral	0.69	🔸 Performs well despite fewer samples. Likely due to its distinguishable flat tone.
+Disgust	0.55	🔻 Lower score. Caused by small sample size and subtle vocal features. SMOTE helps but not enough.
+Surprised	0.61	🔻 Low F1 but better than disgust. Still limited by data imbalance and overlapping features.
 **Classification Report Insights:** <br>
 Calm, Angry, and Sad emotions are classified well (F1 > 0.65).Disgust and Surprised emotions had lower support in data but still achieved ~0.55–0.61 F1-score.Neutral was relatively balanced, scoring ~0.69 F1
