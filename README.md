@@ -1,3 +1,4 @@
+
 # Emotional Classification Speech Processing
 
 This project aims to build an end-to-end **audio emotion recognition system** that accurately classifies human emotions from speech signals. Leveraging machine learning techniques and audio signal processing (like MFCC feature extraction), the model identifies emotional states such as happiness, anger, sadness, etc., from input speech.
