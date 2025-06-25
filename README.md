@@ -128,9 +128,9 @@ To classify the extracted audio features, I trained an MLP (Multi-Layer Perceptr
 
 **Metrics Summary** <br>
 
-Accuracy	76.1%
-Weighted F1	76%
-Macro F1	75%
+1)Accuracy	76.1% <br>
+2)Weighted F1	76% <br>
+3)Macro F1	75% <br>
 
 **F1 Score Based Analysis (Emotion-Wise)** <br>
 
