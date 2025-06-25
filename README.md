@@ -69,8 +69,18 @@ After combining both datasets:
 
 RandomForestClassifier (GridSearchCV tuned)
 XGBoost Classifier (RandomizedSearchCV tuned)
-Multilayer Perceptron Classifier(MLP Classifier)
-
+Multilayer Perceptron Classifier(MLP Classifier)<br>
+The best Model with good metrics will be chosen for final training 
 6)Model Evaluation and confusion matrix after every model training
 
 ##Random Forest Classifier 
+To classify the extracted emotion features, I have trained a Random Forest Classifier with hyperparameter tuning using GridSearchCV. The model was trained on a balanced dataset using SMOTE (Synthetic Minority Oversampling Technique) to handle class imbalance.
+
+Results Summary:
+Metric	Scores-
+Accuracy	69.4%
+Weighted F1	70%
+Macro F1	68%
+
+📈 Classification Report Insights:
+Calm, Angry, and Sad emotions are classified well (F1 > 0.65).Disgust and Surprised emotions had lower support in data but still achieved ~0.55–0.61 F1-score.Neutral was relatively balanced, scoring ~0.69 F1
