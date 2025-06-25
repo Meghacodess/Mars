@@ -65,15 +65,15 @@ After combining both datasets:
 
 4)SMOTE Oversampling
 
-5)Model Training using:
+5)Model Training using:<br>
 
-RandomForestClassifier (GridSearchCV tuned)
-XGBoost Classifier (RandomizedSearchCV tuned)
-Multilayer Perceptron Classifier(MLP Classifier)<br>
+*RandomForestClassifier (GridSearchCV tuned)<br>
+*XGBoost Classifier (RandomizedSearchCV tuned)<br>
+*Multilayer Perceptron Classifier(MLP Classifier)<br>
 The best Model with good metrics will be chosen for final training 
 6)Model Evaluation and confusion matrix after every model training
 
-##Random Forest Classifier 
+## Random Forest Classifier 
 To classify the extracted emotion features, I have trained a Random Forest Classifier with hyperparameter tuning using GridSearchCV. The model was trained on a balanced dataset using SMOTE (Synthetic Minority Oversampling Technique) to handle class imbalance.
 
 Results Summary:
