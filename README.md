@@ -90,11 +90,34 @@ Macro F1	68% <br>
 
 **F1 Score Based Analysis (Emotion-Wise)** <br>
 
-Calm	0.84	🔹 Best-performing emotion. High precision & recall. Likely due to clear, consistent acoustic patterns.<br>
+Calm	0.84	🔹 `Best-performing emotion`. High precision & recall. Likely due to clear, consistent acoustic patterns.<br>
 Angry	0.76	🔹 Strong performance. Model identifies it confidently—probably due to its intense, sharp vocal tone.<br>
 Sad	0.67	🔸 Moderately high. Slight confusion with similar low-energy emotions like fearful.<br>
 Fearful	0.65	🔸 Mid-level score. Often confused with sad or angry, reflecting overlap in vocal tone features.<br>
 Happy	0.68	🔸 Moderate. Good precision but slightly low recall — model misses some happy samples.<br>
 Neutral	0.69	🔸 Performs well despite fewer samples. Likely due to its distinguishable flat tone.<br>
-Disgust	0.55	🔻 Lower score. Caused by small sample size and subtle vocal features. SMOTE helps but not enough.<br>
+Disgust	0.55	🔻 `Lower score`. Caused by small sample size and subtle vocal features. SMOTE helps but not enough.<br>
 Surprised	0.61	🔻 Low F1 but better than disgust. Still limited by data imbalance and overlapping features.<br>
+
+---
+
+## XGBoost Classifier
+To further **improve emotion classification performance**, I trained an `XGBoost Classifier` with RandomizedSearchCV for hyperparameter tuning. Like with Random Forest, SMOTE was applied to address class imbalance before training.
+
+**Metric Scores**-
+1)Accuracy: 73.1%<br>
+2)Weighted F1 Score: 73% <br>
+3)Macro F1 Score: 72% <br>
+
+**F1 Score Based Analysis (Emotion-Wise)** <br>
+
+Calm	0.84	🔹 Best-performing again. Consistently high recall and precision. Very distinguishable emotion.<br>
+Angry	0.78	🔹 Strong performance. Emotion is vocally expressive and well captured.<br>
+Disgust	0.66	🔸 Improved over Random Forest. Possibly helped by better feature learning.<br>
+Fearful	0.69	🔸 Slight improvement. Still some confusion with sad and angry.<br>
+Happy	0.71	🔸 Higher than RF. Good detection but slight loss in recall.<br>
+Neutral	0.74	🔹 Improved further. Flat tone is distinguishable and better learned.<br>
+Sad	0.68	🔸 Similar to RF. Some overlap with fearful still exists.<br>
+Surprised	0.71	🔸 Greatly improved! Indicates model generalizes well with boosted trees.<br>
+
+---
