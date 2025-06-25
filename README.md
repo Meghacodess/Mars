@@ -90,13 +90,13 @@ Macro F1	68% <br>
 
 **F1 Score Based Analysis (Emotion-Wise)** <br>
 
-Calm	0.84	🔹 `Best-performing emotion`. High precision & recall. Likely due to clear, consistent acoustic patterns.<br>
+Calm	0.84	🔹 Best-performing emotion. High precision & recall. Likely due to clear, consistent acoustic patterns.<br>
 Angry	0.76	🔹 Strong performance. Model identifies it confidently—probably due to its intense, sharp vocal tone.<br>
 Sad	0.67	🔸 Moderately high. Slight confusion with similar low-energy emotions like fearful.<br>
 Fearful	0.65	🔸 Mid-level score. Often confused with sad or angry, reflecting overlap in vocal tone features.<br>
 Happy	0.68	🔸 Moderate. Good precision but slightly low recall — model misses some happy samples.<br>
 Neutral	0.69	🔸 Performs well despite fewer samples. Likely due to its distinguishable flat tone.<br>
-Disgust	0.55	🔻 `Lower score`. Caused by small sample size and subtle vocal features. SMOTE helps but not enough.<br>
+Disgust	0.55	🔻 Lower score. Caused by small sample size and subtle vocal features. SMOTE helps but not enough.<br>
 Surprised	0.61	🔻 Low F1 but better than disgust. Still limited by data imbalance and overlapping features.<br>
 
 ---
@@ -104,7 +104,7 @@ Surprised	0.61	🔻 Low F1 but better than disgust. Still limited by data imbala
 ## XGBoost Classifier
 To further **improve emotion classification performance**, I trained an `XGBoost Classifier` with RandomizedSearchCV for hyperparameter tuning. Like with Random Forest, SMOTE was applied to address class imbalance before training.
 
-**Metric Scores**-
+**Metric Scores**- <br>
 1)Accuracy: 73.1%<br>
 2)Weighted F1 Score: 73% <br>
 3)Macro F1 Score: 72% <br>
@@ -121,3 +121,34 @@ Sad	0.68	🔸 Similar to RF. Some overlap with fearful still exists.<br>
 Surprised	0.71	🔸 Greatly improved! Indicates model generalizes well with boosted trees.<br>
 
 ---
+ MLP Classifier (Multi-Layer Perceptron)
+To classify the extracted audio features, I trained an MLP (Multi-Layer Perceptron) model using a 3-hidden-layer architecture (256 → 128 → 64) with ReLU activation and adaptive learning rate. The model was trained on a SMOTE-balanced dataset to reduce bias due to class imbalance.
+
+
+**Metrics Summary** <br>
+
+Accuracy	76.1%
+Weighted F1	76%
+Macro F1	75%
+
+**F1 Score Based Analysis (Emotion-Wise)** <br>
+
+Calm	0.86	🔹 Best-performing. Model captures calm tones very clearly. <br>
+Angry	0.84	🔹 Very strong detection—likely due to sharp acoustic signals.<br>
+Neutral	0.77	🔹 Performs reliably despite fewer samples. Good generalization.<br>
+Fearful	0.74	🔸 Solid, but slightly confused with sad/angry tones.<br>
+Sad	0.72	🔸 Mid-level performance. Overlaps with fearful/happy.<br>
+Happy	0.72	🔸 Decent detection. Model struggles a bit with subtle joy expressions.<br>
+Surprised	0.70	🔸 Better than previous models, still slightly overlapping with others.<br>
+Disgust	0.66	🔻 Lowest but improved. Still affected by limited training samples.<br>
+
+### Conclusion <br>
+The MLPClassifier performed the **best** overall among the models tested, crossing 76% in all major metrics. Its deep learning nature allowed it to model complex non-linearities in audio signals more effectively than Random Forest or XGBoost.
+
+
+
+
+
+
+
+
