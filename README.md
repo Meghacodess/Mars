@@ -76,10 +76,10 @@ The best Model with good metrics will be chosen for final training
 ## Random Forest Classifier 
 To classify the extracted emotion features, I have trained a Random Forest Classifier with hyperparameter tuning using GridSearchCV. The model was trained on a balanced dataset using SMOTE (Synthetic Minority Oversampling Technique) to handle class imbalance.
 ### Metric Description
-1) Accuracy- The ratio of correct predictions to the total number of predictions.<br>
-2)F1 score-The harmonic mean of precision and recall.<br>
-3)Macro F1 Score- Compute F1 score for each class individually and then take the average, treating all classes equally.<br>
-4)Weighted F1 Score- Compute F1 score for each class and then take the average, but weigh by the number of true instances in each class. I have used this in my project as our model has class imbalance, it reflects overall performance better.<br><br>
+ 1) **Accuracy**- The ratio of correct predictions to the total number of predictions.<br>
+2)**F1 score**-The harmonic mean of precision and recall.<br>
+3)**Macro F1 Score**- Compute F1 score for each class individually and then take the average, treating all classes equally.<br>
+4)**Weighted F1 Score**- Compute F1 score for each class and then take the average, but weigh by the number of true instances in each class. I have used this in my project as our model has class imbalance, it reflects overall performance better.<br><br>
 
 
 Metric	Scores-
