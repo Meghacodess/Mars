@@ -78,9 +78,9 @@ To classify the extracted emotion features, I have trained a Random Forest Class
 
 Results Summary:
 Metric	Scores-
-Accuracy	69.4%
-Weighted F1	70%
-Macro F1	68%
+Accuracy	69.4% <br>
+Weighted F1	70% <br>
+Macro F1	68% <br>
 
-📈 Classification Report Insights:
+**Classification Report Insights: ** <br>
 Calm, Angry, and Sad emotions are classified well (F1 > 0.65).Disgust and Surprised emotions had lower support in data but still achieved ~0.55–0.61 F1-score.Neutral was relatively balanced, scoring ~0.69 F1
