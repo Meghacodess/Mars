@@ -53,7 +53,7 @@ Represents the "centre of mass" of the spectrum. It indicates whether the sound 
 
 After combining both datasets:
 
-
+---
 
 ## Model Pipeline <br>
 
@@ -73,14 +73,15 @@ After combining both datasets:
 The best Model with good metrics will be chosen for final training. 
 6)Model Evaluation and confusion matrix after every model training
 
-## Random Forest Classifier 
-To classify the extracted emotion features, I have trained a Random Forest Classifier with hyperparameter tuning using GridSearchCV. The model was trained on a balanced dataset using SMOTE (Synthetic Minority Oversampling Technique) to handle class imbalance.<br>
-
-### Metric Description
-1) **Accuracy**- The ratio of correct predictions to the total number of predictions.<br>
+--- 
+## Metric Description
+1)**Accuracy**- The ratio of correct predictions to the total number of predictions.<br>
 2)**F1 score**-The harmonic mean of precision and recall.<br>
 3)**Macro F1 Score**- Compute F1 score for each class individually and then take the average, treating all classes equally.<br>
 4)**Weighted F1 Score**- Compute F1 score for each class and then take the average, but weigh by the number of true instances in each class. I have used this in my project as our model has class imbalance, it reflects overall performance better.<br><br>
+
+## Random Forest Classifier 
+To classify the extracted emotion features, I have trained a Random Forest Classifier with hyperparameter tuning using GridSearchCV. The model was trained on a balanced dataset using SMOTE (Synthetic Minority Oversampling Technique) to handle class imbalance.<br>
 
 
 **Metric	Scores**-
@@ -121,7 +122,7 @@ Sad	0.68	🔸 Similar to RF. Some overlap with fearful still exists.<br>
 Surprised	0.71	🔸 Greatly improved! Indicates model generalizes well with boosted trees.<br>
 
 ---
- MLP Classifier (Multi-Layer Perceptron)
+## MLP Classifier (Multi-Layer Perceptron) <br>
 To classify the extracted audio features, I trained an MLP (Multi-Layer Perceptron) model using a 3-hidden-layer architecture (256 → 128 → 64) with ReLU activation and adaptive learning rate. The model was trained on a SMOTE-balanced dataset to reduce bias due to class imbalance.
 
 
